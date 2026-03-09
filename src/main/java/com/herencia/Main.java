@@ -8,7 +8,12 @@ public class Main {
         cuenta1.retirar(200);
         cuenta1.extracto_mensual();
         cuenta1.imprimir();
+
+        cuentaAhorros cuenta2 = new cuentaAhorros(15000, 0.105f);
+        cuenta2.ejecutarOperacion(); // Debería ejecutar la operación
+        cuenta2.imprimir2();
         
+            
 
     }
 
