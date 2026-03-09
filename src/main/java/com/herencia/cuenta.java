@@ -13,6 +13,22 @@ public class cuenta {
         this.tasa_anual = tasa_anual;
     }
 
+    public float getSaldo() {
+        return saldo;
+    }
+
+    public void setSaldo(float saldo) {
+        this.saldo = saldo;
+    }
+
+    public float getTasa_anual() {
+        return tasa_anual;
+    }
+
+    public void setTasa_anual(float tasa_anual) {
+        this.tasa_anual = tasa_anual;
+    }
+
     public void consignar(float cantidad) {
         if (cantidad > 0) {
             this.saldo += cantidad;
@@ -22,5 +38,18 @@ public class cuenta {
         }
     }
 
-    
+    public void retirar(float cantidad) {
+        if (cantidad > 0 && cantidad <= this.saldo) {
+            this.saldo -= cantidad;
+            this.num_retiros++;
+        } else {
+            System.out.println("Saldo insuficiente");
+        }
+    }
+
+    public void calcular_interes() {
+        float interes_mensual = (this.saldo * this.tasa_anual) / 12;
+        this.saldo += interes_mensual;
+    }
+
 }
