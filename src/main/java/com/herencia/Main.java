@@ -14,8 +14,8 @@ public class Main {
         cuenta2.imprimir2();
 
         cuentaCorriente cuenta3 = new cuentaCorriente(2000, 0.1f);
-        cuenta3.retirar(1000); // Debería permitir el retiro y mostrar el sobregiro;
-        cuenta3.consignar(500); // Debería reducir el sobregiro
+        cuenta3.retirar(1000); 
+        cuenta3.consignar(500); 
         cuenta3.extracto_mensual();
         cuenta3.imprimir3();
 
