@@ -30,18 +30,14 @@ public class cuentaCorriente extends cuenta {
 
     @Override
     public void consignar(float cantidad) {
-        // Invoca al método heredado (suma al saldo y aumenta num_consignaciones)
         super.consignar(cantidad);
 
-        // Si existe sobregiro, la consignación debe cubrirlo primero
         if (sobregiro > 0 && cantidad > 0) {
             if (cantidad >= sobregiro) {
-                // La consignación cubre todo el sobregiro
                 cantidad -= sobregiro;
-                this.saldo += cantidad; // lo que sobra se suma al saldo
+                this.saldo += cantidad; 
                 System.out.println("Sobregiro cubierto. Saldo actual: " + this.saldo);
             } else {
-                // La consignación solo reduce parte del sobregiro
                 sobregiro -= cantidad;
                 System.out.println("Sobregiro reducido. Nuevo sobregiro: " + exceso);
             }
